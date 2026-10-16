@@ -1,0 +1,285 @@
+Delivered-To: sgkean24@coe.edu
+Received: by 2002:a17:906:f941:b0:c31:576b:5bb2 with SMTP id ld1csp3704707ejb;
+        Fri, 16 Oct 2026 14:18:52 -0700 (PDT)
+X-Received: by 2002:a05:6820:55d1:10b0:6de:d2c1:e96c with SMTP id 006d021491bc7-70358191117mr394597eaf.82.1792185532197;
+        Fri, 16 Oct 2026 14:18:52 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1792185532; cv=fail;
+        d=google.com; s=arc-20260327;
+        b=YNkDhiFRLjGe/SymZlzZf0Ofwr0NSWdCEKF7yQ1cHVwsbIIq8Et5F7phE/LEcGx0Lw
+         1nZJZIioZOHjtAFQsX94QNyGYdSzUdTVSlT1Qc5BC/O/TmteSf42KSmlMMT/7xnvlBQ6
+         26tFCc+/Sd/v4mxmIUwJMhtLifM242mHxM7WCVDnzb9cy84tx/dlcno04Eg2KjYzf/mY
+         AWO+6etR3F/b4wlWui/BEtjhjCF2+TB49qK7tNzdY/+Gk284Svo5oegVtcm4WU0fo3xt
+         AgKkqdGiNsjaTc9XLNgkxeh+qN6dtHaRpQXioIOoXu35DI2oCyel4fL1MsZP9fbw+xRe
+         BWVw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=mime-version:to:subject:message-id:date:from:in-reply-to:references
+         :dkim-signature;
+        bh=Dfxpk5t0uYd7DZUon64pQpTpymM0jOZQDtuesuBXkO4=;
+        fh=pCDhwqQ8g9Mb/Xd3cuD14w/JcdG1OyUta4kzWC8A9V0=;
+        b=ZKbahE8CTRHHwQGSOl6NAghIwpy19q5HIrmv0gM5m7pM+D1zEHaMJ6NMwkdpO6X0T+
+         sROnHmITDL3tPO1+2vpDVX6cerzy1N+h3bhuLqUqlVkBkw99LKj8mDcy8ktE4X2qIdKR
+         luQjN/tWrVot+3u+5Bnxc8vhd08lZ3UHXK4tgPA8rtlBY5gxz/0KB2CpNPJjfMp8QQg7
+         u6AZG+T8DgLFmMdwSPiONfaIxEidLRc+eYR0wwV7hb24ce2LHA+4/N/WvD3jG0Nz5+Mn
+         fM7q3gtNMb9hiv/UnxMPVOD6jq0v8O+Pwmcn14KOn/ccrrfHHqG7SvERgrq3cPTHqVWh
+         3Mgg==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@holofanco.com header.s=google header.b=TTcRvs+I;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of support@holofanco.com designates 209.85.218.42 as permitted sender) smtp.mailfrom=support@holofanco.com;
+       dara=neutral header.i=@coe.edu
+Return-Path: <support@holofanco.com>
+Received: from mx0b-008ae401.pphosted.com (mx0b-008ae401.pphosted.com. [148.163.142.26])
+        by mx.google.com with ESMTPS id 006d021491bc7-7038fa25035si116659eaf.8.2026.10.16.14.18.51
+        for <sgkean24@coe.edu>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 16 Oct 2026 14:18:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of support@holofanco.com designates 209.85.218.42 as permitted sender) client-ip=209.85.218.42;
+Authentication-Results: mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@holofanco.com header.s=google header.b=TTcRvs+I;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of support@holofanco.com designates 209.85.218.42 as permitted sender) smtp.mailfrom=support@holofanco.com;
+       dara=neutral header.i=@coe.edu
+Received: from pps.filterd (m0367327.ppops.net [127.0.0.1])
+	by mx0b-008ae401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GJfSPK3832673
+	for <sgkean24@coe.edu>; Fri, 16 Oct 2026 16:18:51 -0500
+Authentication-Results: ppops.net;
+	spf=pass smtp.mailfrom=support@holofanco.com;
+	dkim=pass header.d=holofanco.com header.s=google;
+	dmarc=none
+Received: from mail-ej1-f42.google.com (mail-ej1-f42.google.com [209.85.218.42])
+	by mx0b-008ae401.pphosted.com (PPS) with ESMTPS id 4h888hwgwd-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <sgkean24@coe.edu>; Fri, 16 Oct 2026 16:18:51 -0500 (CDT)
+Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-c2e69aa07c3so38100866b.1
+        for <sgkean24@coe.edu>; Fri, 16 Oct 2026 14:18:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792185529; cv=none;
+        d=google.com; s=arc-20260327;
+        b=ZQmfeM7cI9zX+R7DRPJvBhQqRhlDAkJ7avdXDPEVYI8HP9xJnq67871AJU9294Kkwt
+         84D5JUXdZyQatv7XTKszVbs7n79gwwE2rhdQHR0WcD1f9iE6qLXAzlDCzzQM4Qfmkx4c
+         72KeqWL5KZu9N2D8RHWMJfkxRLvZJu0O9o7iwrUGrfMNyrUvBFxLDQxRXyO8TROi2csg
+         UxAFifgDhYG0h86IAQ5L7OPMip6i5fmCS3IC0QIiphCTISow3BNYDeZ/lYNNTvUfk6/7
+         an3WPa6JY2gN0GStHgUiFqFYlRT2p/lLCA/F1FFkHscv3AEdTj/V1tijlGemh5SiBXmg
+         X8mQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=b0mGBzbtZqXEpFQfDLS5tWb+oVzknnHpoQJqQ8e5so0=;
+        fh=pCDhwqQ8g9Mb/Xd3cuD14w/JcdG1OyUta4kzWC8A9V0=;
+        b=J2Wndg1cFqExl7qDmZOm8WxUAH8gEqAUS2LMBRH35qiuAA9CZK6kYEZbVzuchHB18Z
+         wBTpbARFQR4Adm8BZTaoVmtu9cCI2W0G+FyumqPX83gH+VXMkS+GXfVJRR3tNwViiu3h
+         NtPjr0dOd6/3cxFn6xuA/DJ2lJTh4vhoCtJi4FUQXUUGy6oxVYRLmOMw5IBCwNAtNnsa
+         7hU9x9aS4/zWhzZ/zdluTWf45B5ow75AoFY6SyZIumv2kC2QTnwWV0/p/B2VEifiUWCM
+         9RcUk/k7j+DHWu0bHV7RQyzm5Yc8y6FRI/TmVfBqtNRZFVC5RSPdnbNq6C//hhjHUMz3
+         yEYw==;
+        darn=coe.edu
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=holofanco.com; s=google; t=1792185529; x=1792790329; darn=coe.edu;
+        h=content-type:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=b0mGBzbtZqXEpFQfDLS5tWb+oVzknnHpoQJqQ8e5so0=;
+        b=TTcRvs+IgVYgO0qd8SPvHLu756YCJmZrd8hz9wjGCM5yyQjx7CFeX0fAX2/BZ2Y0uo
+         ONyPa6hObdZ5r4VpMdSNqaUbGPwFQcqMYYuLi0t+vsLhda5aLAemUl2vwZZ2qq4oMWCY
+         FIO+30w3vZXPrrB4uPeJ4FAiH9oUOYSXW+dUU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792185529; x=1792790329;
+        h=content-type:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=b0mGBzbtZqXEpFQfDLS5tWb+oVzknnHpoQJqQ8e5so0=;
+        b=aI6JGIAmx+ChGvGmrEaKFWMfdXBLqg5DNhx1HNc+gIMKkHa5FI9eGTWl3tePyU+3TS
+         eaqWOdKlCHQDyH+HVIfCnPUn/c8xv6nFTMS3SpUpVeTDNb7mlN4Sxvb8GEE+6VXYIPHy
+         jjnj9gu2laysP51z8NIa8Brtj7ShbD/3Cn6223+7bZfF8Bj5ZW+fZbykSgcbbkUpS/Lp
+         1kS5R3QCfc3nWtfTdwebjU8TYG5huf0EIfYk70QBCLipfTjBZU09XcZasvkbcKct+/kc
+         Sm4/wfOGhJMVpQwwHQ9vm3eFotR0Xbt1jNa+HjspMD/vA0gfVtemtt7+k4d9moH45URF
+         /nWQ==
+X-Gm-Message-State: AFq9FYI4tdnMdpROBG00x/cIIqVz2IM8CQsWANguv+7Tvmqz0NZrIRDT
+	m7We2MwkKiBeVIAfyAtYMUsX/pnHI9V+khNXDHZFldURUOFw9oEj/rifG1o9aYyW8kzXwPjIpQp
+	buGuz7Z1YpIl99/qBnzxlN+m4CyE0PtmEPVhZRnB2B5Imwgod7T6hvYXL0g==
+X-Gm-Gg: AYBFou29KyoQ1t4WYeEXrfqKiGgTT5Hj0aCwBwGjDEOWTzkM3+LMHIIUiZhkQyr2RSH
+	7+s7KUAd2mNIZRPOsQDaB8IpAnL54kI/bUF174FLBVjuWfPah7bXF8RKZ7HsRtNYF8etYZAo+F4
+	OX1PukPRcEAtidLX/iMHNPz50Jf/p9yhqyjIZjnJNwW9OXHSgOgVK7Fls3J9VFGO4YpgaG4G/SX
+	e6YGdl2rLa6/hub8P12dCSKZ1IO8MI/a6svBoPmp0Pq1hdpL7g1yFhjS+ZuSbsjvwdY5CZj/8BS
+	p1+gJ8HAa/5SxCYE3C02R0mGNXZGL+Iu4agc0PR0Qkd9mWWXLKeMwSiMPHvTHyBbJnutRnCAA1C
+	i5o70BpbeIn2jKvKPf8Y1zihswLCAlp+Uq9evmVIEEiBemSJp3ZDuPlTbLAKmnDHtVux7PUMv6r
+	DmIbS+
+X-Received: by 2002:a17:907:96a2:b0:c3e:d18c:1d7d with SMTP id
+ a640c23a62f3a-c419e2335b9mr77479666b.22.1792185529558; Fri, 16 Oct 2026
+ 14:18:49 -0700 (PDT)
+References: <CAEYM78dRjrRQuzEayGPDLpeQih1e8f5wnQLMAvP1TQdo9td2cA@mail.gmail.com>
+In-Reply-To: <CAEYM78dRjrRQuzEayGPDLpeQih1e8f5wnQLMAvP1TQdo9td2cA@mail.gmail.com>
+From: HOLOFAN Support <support@holofanco.com>
+Date: Sat, 17 Oct 2026 05:18:37 +0800
+X-Gm-Features: AclHuK-J0TpIJqobtXO88-K0UokS9792yADPaXJOGMdZnHvNUt1HATfInzBjPxQ
+Message-ID: <CACb8jmjh9i5+LdGjpZd-qvLUThLRWXxtsqXwsunE55e8S6DuJA@mail.gmail.com>
+Subject: [External] Re: Holofan Support
+To: "Kean, Sean" <sgkean24@coe.edu>
+Content-Type: multipart/alternative; boundary="000000000000dc7476065dfbb5bd"
+X-CLX-Response: 1TFkXGx0eEQpMehceEhEKWUQXYWAZTE1ZaR9JWmsRClhYF2UaHnx5XxtCZER
+ vEQp4Thd6a3pbZkB+GHpleREKeUwXYRtwY0lhGlN5fgURCkNIFxgZHBEKQ1kXGhEKQ0kXGgQaGh
+ oRCllNF2dmchEKWUkXGnEaEBp3BhsfHnEZHhAadwYYGgYaEQpZXhdsbHkRCklGF0lFT0lFRkZPT
+ U91QkVZXk9OEQpJRxd4T00RCkNOF3pTHF56UltNQhwaHR5tSR9pU25rdWB8E1JpXk1gfXpeEQpY
+ XBcfBBoEHhgTBRsaBBsaGgQbGR4EGRkQGx4aHxoRCl5ZF0NpbkZ9EQpNXBcYHxkRCkxaF29paxp
+ rEQpNThdpaxEKTEYXb2tjbGtrEQpCTxdlflxZW1tHY1NhbBEKQ1oXGBoTBBIfBBgbEgQeGBEKQl
+ 4XGxEKQlwXGxEKXk4XGxEKQksXemt6W2ZAfhh6ZXkRCkJJF3preltmQH4YemV5EQpCRRdlbVIZA
+ XxcX2MeRhEKQk4Xemt6W2ZAfhh6ZXkRCkJMF2UaHnx5XxtCZERvEQpCbBduYF5fGl8eGWsdYREK
+ QkAXelpeQENbGWFTcl8RCkJYF2lfQkZ8aW9wWl4cEQpNXhcbEQpaWBcYEQp5QxdnSV9CZmcTYh1
+ ZXhEKWUsXGBoTHREKcGcXZGRNXQFwYWhBbQUQGRoRCnBoF29jH2lDUx55ZUFJEBkaEQpwaBd6WE
+ lQG3JHYFABcxAZGhEKcGgXbAVPSHBkSWhpaR8QHRIRCnBoF2h9XxtNf1xjaWBMEBkaEQpwaBdoZ
+ 3lgRH5TGlxMZRAZGhEKcGgXYH5nWAVkR1Jcb0EQGRoRCnBoF2gYXE8TcGV/ZktEEBkaEQpwaBdu
+ ekxpRUMbHGdhYBAZGhEKcH0XbR0aEkx+QE4fE2EQGRoRCnB9F2IFWH9iYGlIaHNdEBkaEQpwfxd
+ pf3ofEkNPRG9CeRAZGhEKcF8XbFhrGntjXE9YUH4QGRoRCnB/F2VLbl9tU3l8SXhMEBIYEQpwXx
+ dtfl1hWXtnE0ZbRBAZGhEKcGwXYFNvTG9BHxxLTXIQGRoRCnBMF21SYU5ZbnJeG3liEBkaEQptf
+ hcbEQpYTRdLESA=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA4NSBTYWx0ZWRfX1n9LZ/2Xr7b2
+ bf1yreAfUx7RMH9ooe+K26vK1ZEKbkKy+c9btUdwwlz5gVyjtTusi6z9EPzyPnRXl3NM7XhTTEy
+ c+bsiHRpk3Ikz87EcJfKkg0NseCO96xqPLT3aSA6kuv0tFz2G04R6fbx9DlskDmNN+T/rRC3DOV
+ U3HdO9FaIb6ofrC++yII6sAwRHYplp6SHhxKhG+GK6dScOd/yJ1j1NOWeYs6e5Q98Y0wQBsW1jp
+ EA6JTeQMeFfqhwbEPciuJ/IX3bun3XQsxNJgSg6MGAuMnLugQR2cqT+Bqj+3dpXCOroSUyxOhpx
+ bPb6lx4QXFU230i+dEq4AQml1KLa7vwvSSR0dGMhJllSy6f0lLpQyn0yN6Gn14ehePuD1oqOgB4
+ dKb3m71H0oLvfrTh8paWVrwzDS6/jioNl1eJIV6fZpH8PRUceuqinPkmHZ/ootdlsLSiepTFeT5
+ JNbwAKHCAeWnK9MwcP5C3OmQXy6aiTDJYPIt4kWrAZFLSeObKlLvYfCQiCqEWy5PTTn7oXp132y
+ u39z91tWy5X+7gzdbbllUTSU7+c6k=
+X-Proofpoint-ORIG-GUID: Py6tPxqgh6074Gc5CyDA_JV9xCtgJWPt
+X-CLX-Shades: MLX
+X-Authority-Analysis: v=2.4 cv=U4EHnuru c=1 sm=1 tr=0 ts=6ad294bb cx=c_pps
+ a=c2S5A7n/ooz/KAakJUltow==:117 a=660iZSQnnn4A:10 a=NZiuR93KoHkA:10
+ a=g8TUdU_LZmEA:10 a=JyWEw40TUO5AK6tc77iI:22 a=PvfnotuYNkLNlkLvvsiN:22
+ a=W7fEGm0bj3Kf64UvSnxk:22 a=NVzzeOfzAAAA:8 a=B5gpOOgrAVKg3UQOc0IA:9
+ a=QEXdDO2ut3YA:10 a=j1yQsRgFAAAA:8 a=ZYBJDKk_Xp0A_lpAxnEA:9
+ a=Qbn21Y7iuExtFMAM:21 a=lqcHg5cX4UMA:10 a=cKrqeah0-SRXglbXC0MA:22
+ a=ht4V1zHzX0pRTvPg5Zog:22 a=RHcDLH-PIZ2r2WCVrzJn:22 a=EWzdV9xrZ2NEmVgjUJNF:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA4NSBTYWx0ZWRfX3uGNaLmSpOmE
+ oXwWeZvyOJfQyZZx03tHhfhAWKYC1ytvoq7VY90Nhr/Wsr4/rjexLrTDO3zrSQ33GMchqughZLR
+ Cxr8RMOVQq6l0B7tAlJ7UssMgXfeHdncKh4+RIX9EGC9/bOBu/SG
+X-Proofpoint-GUID: Py6tPxqgh6074Gc5CyDA_JV9xCtgJWPt
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-16_03,2026-10-14_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0
+ spamscore=0 bulkscore=0 adultscore=0 impostorscore=0 malwarescore=0
+ suspectscore=0 phishscore=0 priorityscore=48 clxscore=174 lowpriorityscore=0
+ unknownsenderscore=20 classifier=typeunknown authscore=0 authtc= authcc=
+ route=internal adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610160085 domainage_hfrom=2097
+X-EXT: External
+
+--000000000000dc7476065dfbb5bd
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Thank you for reaching out, and I'd be happy to help you find the right
+software for your HOLOFAN 11.8" 3D Hologram Fan.
+
+Since your unit uses .BIN video files and a .SET configuration file, it may
+be an earlier model that works with a different version of our software
+than the one currently available.
+
+To confirm the correct software for your unit, could you please send me
+your order number, or the email address used for the purchase? Once I have
+that, I'll check which version is compatible and get back to you.
+
+If you're able to include a photo of the back of the fan showing the label
+or model number, that would also help.
+
+Rhea L.
+
+Customer Support Specialist | *HOLOFAN CO.*
+
+<https://urldefense.com/v3/__http://www.holofanco.com/__;!!J7xEMG0GYvo!NRE9=
+n7iUqZQZtgMPXNl1YJFR-a0l786E430LkRD3eK7FIRk0J_woJ92E8zBZrJsmWSkW0FCxGVMnqVA=
+o7w8$ >
+
+Phone: 1-800-926-7051
+
+Email: support@holofanco.com
+
+Website: https://urldefense.com/v3/__http://www.holofanco.com__;!!J7xEMG0GY=
+vo!NRE9n7iUqZQZtgMPXNl1YJFR-a0l786E430LkRD3eK7FIRk0J_woJ92E8zBZrJsmWSkW0FCx=
+GVMnPhAWNjk$=20
+
+Address: 13681 Newport Ave. Suite 8-710, Tustin, CA 92780
+
+
+On Sat, Oct 17, 2026 at 5:17=E2=80=AFAM Kean, Sean <sgkean24@coe.edu> wrote:
+
+> Hello, I'm working with a HOLOFAN - 3D Hologram Fan 11.8in small. It's
+> quite old. It takes .BIN files as video files and has a .Set file for what
+> I'm assuming is configuration. The current software only converts to fltv.
+> I was wondering if there is some older version of the software I'd need to
+> install for my fan.
+>
+
+--000000000000dc7476065dfbb5bd
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hi,<br><br>Thank you for reaching out, and I&#39;d be=
+ happy to help you find the right software for your HOLOFAN 11.8&quot; 3D H=
+ologram Fan.<br><br>Since your unit uses .BIN video files and a .SET config=
+uration file, it may be an earlier model that works with a different versio=
+n of our software than the one currently available.<br><br>To confirm the c=
+orrect software for your unit, could you please send me your order number, =
+or the email address used for the purchase? Once I have that, I&#39;ll chec=
+k which version is compatible and get back to you.<br><br>If you&#39;re abl=
+e to include a photo of the back of the fan showing the label or model numb=
+er, that would also help.<br><br></div><div><div dir=3D"ltr" class=3D"gmail=
+_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div style=
+=3D"color:rgb(0,0,0);font-family:Calibri"><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"498" style=3D"font-family:sans-serif;font-s=
+ize:medium;border-collapse:collapse;color:rgb(50,50,50);width:498px;line-he=
+ight:16px"><tbody><tr><td valign=3D"top" style=3D"padding-bottom:6px"><tabl=
+e width=3D"498" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"w=
+idth:498px;border-collapse:collapse;line-height:16px"><tbody><tr><td valign=
+=3D"top"><p style=3D"margin:0.75pt;color:rgb(50,115,220);font-size:16px;lin=
+e-height:16px;font-family:Arial,sans-serif">Rhea L.</p></td></tr><tr><td va=
+lign=3D"top"><p style=3D"margin:0.75pt;font-size:12px;font-family:Arial,san=
+s-serif">Customer Support Specialist=C2=A0|=C2=A0<strong>HOLOFAN CO.</stron=
+g></p></td></tr></tbody></table></td></tr><tr><td valign=3D"top"><table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"498" style=3D"border=
+-collapse:collapse;width:498px;line-height:16px"><tbody><tr><td valign=3D"t=
+op" width=3D"122" style=3D"padding:0px 8px 0px 0px"><p style=3D"margin:0.75=
+pt;line-height:0px"><a href=3D"https://urldefense.com/v3/__http://www.holof=
+anco.com/__;!!J7xEMG0GYvo!NRE9n7iUqZQZtgMPXNl1YJFR-a0l786E430LkRD3eK7FIRk0J=
+_woJ92E8zBZrJsmWSkW0FCxGVMnqVAo7w8$" style=3D"color:rgb(17,85,204)" target=
+=3D"_blank"><img width=3D"120" height=3D"15" src=3D"https://dwk38ivgmwmxw.c=
+loudfront.net/photos/rraiwvxywusjnwmi.png" alt=3D"" style=3D"border:0px;dis=
+play:block;border-radius:0px"></a></p></td><td valign=3D"top" width=3D"368"=
+><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"368" styl=
+e=3D"border-collapse:collapse;width:368px;line-height:16px"><tbody><tr><td =
+valign=3D"top"><p style=3D"margin:0.75pt;font-size:12px;font-family:Arial,s=
+ans-serif"><span style=3D"font-weight:700;color:rgb(50,115,220)">Phone:</sp=
+an>=C2=A0<a href=3D"tel:1-800-926-7051" style=3D"color:rgb(51,51,51);text-d=
+ecoration:none" target=3D"_blank">1-800-926-7051</a></p></td></tr><tr><td v=
+align=3D"top"><p style=3D"margin:0.75pt;font-size:12px;font-family:Arial,sa=
+ns-serif"><span style=3D"font-weight:700;color:rgb(50,115,220)">Email:</spa=
+n>=C2=A0<a href=3D"mailto:support@holofanco.com" style=3D"color:rgb(51,51,5=
+1);text-decoration:none" target=3D"_blank">support@holofanco.com</a></p></t=
+d></tr><tr><td valign=3D"top"><p style=3D"margin:0.75pt;font-size:12px;font=
+-family:Arial,sans-serif"><span style=3D"font-weight:700;color:rgb(50,115,2=
+20)">Website:</span>=C2=A0<a href=3D"https://urldefense.com/v3/__http://www=
+.holofanco.com/__;!!J7xEMG0GYvo!NRE9n7iUqZQZtgMPXNl1YJFR-a0l786E430LkRD3eK7=
+FIRk0J_woJ92E8zBZrJsmWSkW0FCxGVMnqVAo7w8$" style=3D"color:rgb(51,51,51);tex=
+t-decoration:none" target=3D"_blank">www.holofanco.com</a></p></td></tr><tr=
+><td valign=3D"top"><p style=3D"margin:0.75pt;font-size:12px;font-family:Ar=
+ial,sans-serif"><span style=3D"font-weight:700;color:rgb(50,115,220)">Addre=
+ss:</span>=C2=A013681 Newport Ave. Suite 8-710, Tustin, CA 92780</p></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></di=
+v></div></div></div><br></div><br><div class=3D"gmail_quote gmail_quote_con=
+tainer"><div dir=3D"ltr" class=3D"gmail_attr">On Sat, Oct 17, 2026 at 5:17=
+=E2=80=AFAM Kean, Sean &lt;<a href=3D"mailto:sgkean24@coe.edu">sgkean24@coe=
+.edu</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
+gin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1=
+ex"><div dir=3D"ltr">Hello, I&#39;m working with a HOLOFAN - 3D Hologram Fa=
+n 11.8in small. It&#39;s quite old. It takes .BIN files as video=C2=A0files=
+ and has a .Set file for what I&#39;m assuming is configuration. The curren=
+t=C2=A0software only converts to fltv. I was wondering if there is some old=
+er version of the software I&#39;d need to install for my fan.<br></div>
+</blockquote></div>
+
+--000000000000dc7476065dfbb5bd--
