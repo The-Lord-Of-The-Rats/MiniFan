@@ -10,3 +10,5 @@ Working theory
 I've contacted customer support. We needed the email of the buyer/order number. I got that info from Leann: grimleys@netins.net and #2216
 
 They returned two links one for IOS and one for windows I'm uploading the windows files as a .zip under "holoscope.zip"
+
+After trying to "Transcode" with various "Types" we found no positive result in displaying videos in the holofan we simply keep getting .mp4 files that lack the proper .Bin or .Set files
